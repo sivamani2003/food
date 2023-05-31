@@ -21,7 +21,7 @@ const Recipe = () => {
         <>
             {
                 (!item) ? "" : <div className="content">
-                                <img src={item.strMealThumb} alt="" />
+                                <img src={item.strMealThumb} alt="item image" />
                                 <div className="inner-content">
                                 <h1>{item.strMeal}</h1>
                                 <h2>{item.strArea} Food</h2>
