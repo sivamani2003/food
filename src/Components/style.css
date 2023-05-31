@@ -29,6 +29,7 @@ body{
     outline:none;
     border-radius: 1rem;
     padding: 0.3rem 1rem;
+    cursor: pointer;
 }
 .container{
     width: 80%;
@@ -36,6 +37,7 @@ body{
     display: grid;
     grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     grid-gap: 2rem;
+    cursor: pointer;
 }
 .card{
     width: 180px;
@@ -52,8 +54,9 @@ body{
     font-size: 18px;
 }
 .content img{
-    width: 100%;
+    width: 80%;
     height: 600px;
+    margin-left:10%;
 }  
 .content .inner-content{
     background-color:white;
@@ -85,6 +88,7 @@ body{
 .video{
     width: 80%;
     margin: 3rem auto;
+    cursor: pointer;
 }
 .indexContainer{
     display: flex;

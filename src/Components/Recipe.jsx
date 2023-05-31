@@ -1,33 +1,32 @@
 import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-var id="";
+var id = "";
 const Recipe = () => {
-    const [item, setItem] = useState(); 
+    const [item, setItem] = useState();
     const { recipeId } = useParams();
-    if (recipeId !==" ") {
+    if (recipeId !== " ") {
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`).then(res => res.json()).then(data => {
-            setItem(data.meals[0]);  
+            setItem(data.meals[0]);
         })
     }
-    if(item){
-      const strYoutube= item.strYoutube;
-      const str=strYoutube.split("=");
-      id=str[str.length-1];
+    if (item) {
+        const strYoutube = item.strYoutube;
+        const str = strYoutube.split("=");
+        id = str[str.length - 1];
     }
-  
+
 
     return (
         <>
             {
                 (!item) ? "" : <div className="content">
-                    <img src={item.strMealThumb} alt="" />
-                    <div className="inner-content">
-                        <h1>{item.strMeal}</h1>
-                        <h2>{item.strArea} Food</h2>
-                        <h3>Category {item.strCategory}</h3>
-                    </div>
-                
+                                <img src={item.strMealThumb} alt="" />
+                                <div className="inner-content">
+                                <h1>{item.strMeal}</h1>
+                                <h2>{item.strArea} Food</h2>
+                                <h3>Category {item.strCategory}</h3>
+                                </div>
                     <div className="recipe-details">
                         <div className="ingredients">
                             <h2>Ingredients</h2><br />
@@ -46,13 +45,13 @@ const Recipe = () => {
                         </div>
                     </div>
                     <div className="video">
-                       
-                            {/* setVurl(item.strYoutube)
+
+                        {/* setVurl(item.strYoutube)
                                 //const str=item.strYoutube.split("=");
                                 //state=str[str.length-1];
                                 //state="hj"    */}
-                       
-                       
+
+
                         <iframe width="
                         100%" height="515" title="recipeVideo"
                             src={`https://www.youtube.com/embed/${id}`}>
